@@ -1,3 +1,5 @@
+include mixins/mixins.pug
+
 html
   head
     meta(name='viewport', content='width=device-width, minimum-scale=0.1')
@@ -12,98 +14,44 @@ html
     .group-block
       h2.group-title Sherlock Holmes
       .content
-        .list-heading
-          h3.list-title Season 1
+        +listHeading('Season 1')
         ul.list
-          li
-            p
-              a(href='./film.html?name=sherlock-season-1/Sherlock.1x01') 01
-          li
-            p
-              a(href='./film.html?name=sherlock-season-1/Sherlock.1x02.The.Blind.Banker') 02
-          li
-            p
-              a(href='./film.html?name=sherlock-season-1/Sherlock.1x03.The.Great.Game') 03
-        .list-heading
-          h3.list-title Season 2
+          +item('sherlock-season-1/Sherlock.1x01', '01')
+          +item('sherlock-season-1/Sherlock.1x02.The.Blind.Banker', '02')
+          +item('sherlock-season-1/Sherlock.1x03.The.Great.Game', '03')
+        +listHeading('Season 2')
         ul.list
-          li
-            p
-              a(href='./film.html?name=sherlock-season-2/Sherlock.2x01') 01
-          li
-            p
-              a(href='./film.html?name=sherlock-season-2/Sherlock.2x02') 02
-          li
-            p
-              a(href='./film.html?name=sherlock-season-2/Sherlock.2x03') 03
-        .list-heading
-          h3.list-title Season 3
+          +item('sherlock-season-2/Sherlock.2x01', '01')
+          +item('sherlock-season-2/Sherlock.2x02', '02')
+          +item('sherlock-season-2/Sherlock.2x03', '03')
+        +listHeading('Season 3')
         ul.list
-          li
-            p
-              a(href='./film.html?name=sherlock-season-3/Sherlock.3x01') 01
-          li
-            p
-              a(href='./film.html?name=sherlock-season-3/Sherlock.3x02') 02
-          li
-            p
-              a(href='./film.html?name=sherlock-season-3/Sherlock.3x03') 03
+          +item('sherlock-season-3/Sherlock.3x01', '01')
+          +item('sherlock-season-3/Sherlock.3x02', '02')
+          +item('sherlock-season-3/Sherlock.3x03', '03')
       h2.group-title Harry Potter
       .content
         ul.list
-          li
-            p
-              a(href='./film.html?name=One-shot/E01 - Harry Potter and the Sorcerers Stone (2001)') E01 - Harry Potter and the Sorcerers Stone (2001)
-          li
-            p
-              a(href='./film.html?name=One-shot/E02 - Harry Potter and the Chamber of Secrets (2002)') E02 - Harry Potter and the Chamber of Secrets (2002)
-          li
-            p
-              a(href='./film.html?name=One-shot/E03 - Harry Potter and the Prisoner of Azkaban (2004)') E03 - Harry Potter and the Prisoner of Azkaban (2004)
-          li
-            p
-              a(href='./film.html?name=One-shot/E04 - Harry Potter and the Goblet of Fire (2005)') E04 - Harry Potter and the Goblet of Fire (2005)
-          li
-            p
-              a(href='./film.html?name=One-shot/E05 - Harry Potter and the Order of the Phoenix (2007)') E05 - Harry Potter and the Order of the Phoenix (2007)
-          li
-            p
-              a(href='./film.html?name=One-shot/E06 - Harry Potter and the Half Blood Prince (2009)') E06 - Harry Potter and the Half Blood Prince (2009)
-          li
-            p
-              a(href='./film.html?name=One-shot/E07 - Harry Potter and the Deathly Hallows Part 1 (2010)') E07 - Harry Potter and the Deathly Hallows Part 1 (2010)
-          li
-            p
-              a(href='./film.html?name=One-shot/E08 - Harry Potter and the Deathly Hallows Part 2 (2011)') E08 - Harry Potter and the Deathly Hallows Part 2 (2011)
+          +item('One-shot/E01 - Harry Potter and the Sorcerers Stone (2001)', 'E01 - Harry Potter and the Sorcerers Stone (2001)')
+          +item('One-shot/E02 - Harry Potter and the Chamber of Secrets (2002)', 'E02 - Harry Potter and the Chamber of Secrets (2002)')
+          +item('One-shot/E03 - Harry Potter and the Prisoner of Azkaban (2004)', 'E03 - Harry Potter and the Prisoner of Azkaban (2004)')
+          +item('One-shot/E04 - Harry Potter and the Goblet of Fire (2005)', 'E04 - Harry Potter and the Goblet of Fire (2005)')
+          +item('One-shot/E05 - Harry Potter and the Order of the Phoenix (2007)', 'E05 - Harry Potter and the Order of the Phoenix (2007)')
+          +item('One-shot/E06 - Harry Potter and the Half Blood Prince (2009)', 'E06 - Harry Potter and the Half Blood Prince (2009)')
+          +item('One-shot/E07 - Harry Potter and the Deathly Hallows Part 1 (2010)', 'E07 - Harry Potter and the Deathly Hallows Part 1 (2010)')
+          +item('One-shot/E08 - Harry Potter and the Deathly Hallows Part 2 (2011)', 'E08 - Harry Potter and the Deathly Hallows Part 2 (2011)')
       h2.group-title Mission Impossible
       .content
         ul.list
-          li
-            p
-              a(href='./film.html?name=One-shot/Fallout (2018)') Fallout (2018)
+          +item('One-shot/Fallout (2018)', 'Fallout (2018)')
       h2.group-title One-shot
       .content
         ul.list
-          li
-            p
-              a(href='./film.html?name=Doctor-Strange/Doctor-Strange') Doctor Strange
-          li
-            p
-              a(href='./film.html?name=One-shot/Before-I-fall') Before I fall
-          li
-            p
-              a(href='./film.html?name=One-shot/The-Fifth-Estate') The Fifth Estate
-          li
-            p
-              a(href='./film.html?name=One-shot/The-Imitation-Game') The Imitation Game
-    //
-      <div class="group-block">
-      <h2 class="group-title active">One shot</h2>
-      <div class="content">
-      <ul class="list">
-      </ul>
-      </div>
-      </div>
+          +item('Doctor-Strange/Doctor-Strange', 'Doctor Strange')
+          +item('One-shot/Before-I-fall', 'Before I fall')
+          +item('One-shot/The-Fifth-Estate', 'The Fifth Estate')
+          +item('One-shot/The-Imitation-Game', 'The Imitation Game')
+          
     script(type='text/javascript', src='./master-assets/popper.min.js')
     script(type='text/javascript', src='./master-assets/bootstrap.min.js')
     script(defer='', src='./master-assets/script.js')

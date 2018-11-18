@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js">
   <head>
-    <title>SHERLOCK - SEASON 1 | Thám Tử Sherlock Holmes 1</title>
+    <title>Film</title>
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
     <!-- Bootstrap-->
     <link media="all" type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -41,9 +41,7 @@
           <div class="col-md-9">
             <div class="mediaplayer">
               <video id="video" controls="controls" preload="none" width="100%" height="100%">
-                <source src="movies/sherlock-season-1/Sherlock.1x02.The.Blind.Banker.HDTV.XviD-FoV.mp4">
-                <!-- <input id="en" value="U2FsdGVkX18DtNmj1obYpGqwRGBr6gG+Vz+HnAoGdTuR9eC7c9Pm8f0hHl7ADuMzdodH9VkA7UqZSefd86Gd/A==" />-->
-                <!-- <input id="vi" value="U2FsdGVkX18+j3aCH0rbb4uNt6fPA00otPLP24NkxF/+n2Dc7zhbcyW9Ao3YQkyLtxa0STvOQUZgI63+sxU2yg==" />-->
+                <source src="">
                 <input id="vi" value="">
                 <input id="en" value="">
               </video>
@@ -84,10 +82,12 @@
       var queries = getUrlVars();
       var folderName = 'movies/';
       var movieFile = folderName + queries['name'];
+      var movieName = window.decodeURIComponent(queries['screenName']);
       var movieType = '.mp4';
       $('#video').attr('src', movieFile + movieType);
       $('#en').attr('value', '/studyphim-alike/' + movieFile + '.srt');
       $('#vi').attr('value', '/studyphim-alike/' + movieFile + '-vi.srt');
+      document.title = movieName;
       });
     </script>
     <div class="container-fluid">

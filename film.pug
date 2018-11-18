@@ -1,7 +1,7 @@
 doctype html
 html.no-js
   head
-    title SHERLOCK - SEASON 1 | Thám Tử Sherlock Holmes 1
+    title Film
     link(rel='shortcut icon', href='assets/ico/favicon.ico')
     // Bootstrap
     link(media='all', type='text/css', rel='stylesheet', href='assets/css/bootstrap.min.css')
@@ -39,9 +39,7 @@ html.no-js
           .col-md-9
             .mediaplayer
               video#video(controls='controls', preload='none', width='100%', height='100%')
-                source(src='movies/sherlock-season-1/Sherlock.1x02.The.Blind.Banker.HDTV.XviD-FoV.mp4')
-                // <input id="en" value="U2FsdGVkX18DtNmj1obYpGqwRGBr6gG+Vz+HnAoGdTuR9eC7c9Pm8f0hHl7ADuMzdodH9VkA7UqZSefd86Gd/A==" />
-                // <input id="vi" value="U2FsdGVkX18+j3aCH0rbb4uNt6fPA00otPLP24NkxF/+n2Dc7zhbcyW9Ao3YQkyLtxa0STvOQUZgI63+sxU2yg==" />
+                source(src='')
                 input#vi(value='')
                 input#en(value='')
           #subtitles-sidebar.col-md-3
@@ -69,8 +67,7 @@ html.no-js
                   i.fa.fa-book.fa-5x.pull-left
                   |  Ghi chép lại những từ hoặc câu bạn không nghe được và tiếp tục luyện nghe tiếp
                 .clearfix
-                p
-                  a(href='https://www.studyphim.vn/methods#luyen-nghe') [Hướng dẫn]
+                p: a(href='https://www.studyphim.vn/methods#luyen-nghe') [Hướng dẫn]
     script(type='text/javascript').
       function removePop() {
       $(".mediaplayer .overlay").css('zIndex', -1);
@@ -91,10 +88,12 @@ html.no-js
       var queries = getUrlVars();
       var folderName = 'movies/';
       var movieFile = folderName + queries['name'];
+      var movieName = window.decodeURIComponent(queries['screenName']);
       var movieType = '.mp4';
       $('#video').attr('src', movieFile + movieType);
       $('#en').attr('value', '/studyphim-alike/' + movieFile + '.srt');
       $('#vi').attr('value', '/studyphim-alike/' + movieFile + '-vi.srt');
+      document.title = movieName;
       });
     .container-fluid
       .row
