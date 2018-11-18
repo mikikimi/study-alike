@@ -1,3 +1,4 @@
 *.mp4
 *.smi
 node_modules
+*.html
