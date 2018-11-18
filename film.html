@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
     <title>Film</title>
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="icon" type="image/png" href="./favicon.ico" sizes="16x16">
     <!-- Bootstrap-->
     <link media="all" type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!-- Font-awsome-->
@@ -83,8 +83,8 @@
       var folderName = 'movies/';
       var movieFile = folderName + queries['name'];
       var movieName = window.decodeURIComponent(queries['screenName']);
-      var movieType = '.mp4';
-      $('#video').attr('src', movieFile + movieType);
+      var movieType = window.decodeURIComponent(queries['type']) || 'mp4';
+      $('#video').attr('src', movieFile + '.' + movieType);
       $('#en').attr('value', '/studyphim-alike/' + movieFile + '.srt');
       $('#vi').attr('value', '/studyphim-alike/' + movieFile + '-vi.srt');
       document.title = movieName;
