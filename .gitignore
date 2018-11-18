@@ -1,2 +1,3 @@
 *.mp4
-/movies/Doctor-Strange/*.smi
+*.smi
+node_modules
