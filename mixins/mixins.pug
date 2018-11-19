@@ -1,5 +1,5 @@
-mixin item(url, screenName,className, type)
-  li(class=className): p: a(href='./film.html?name=' + url + '&screenName=' + screenName + '&type=' + type)!=screenName
+mixin item(url, screenName, type = 'mp4')
+  li.full: p: a(href='./film.html?name=' + url + '&screenName=' + screenName + '&type=' + type)!=screenName
 
 mixin listHeading(name)
   .list-heading: h3.list-title!=name
