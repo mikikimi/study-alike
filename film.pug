@@ -90,11 +90,11 @@ html.no-js
       var noViSub = folderName + queries['noViSub'];
       var movieFile = folderName + queries['name'];
       var movieName = window.decodeURIComponent(queries['screenName']);
-      var movieType = window.decodeURIComponent(queries['type']) || 'mp4';
+      var movieType = queries['type'] ? window.decodeURIComponent(queries['type']) : 'mp4';
       $('#video').attr('src', movieFile + '.' + movieType);
       $('#en').attr('value', '/studyphim-alike/' + movieFile + '.srt');
       $('#vi').attr('value', '/studyphim-alike/' + movieFile + '-vi.srt');
-      if (noViSub) {
+      if (noViSub == true) {
         $('body').addClass('no-vi-sub');
       }
       document.title = movieName;

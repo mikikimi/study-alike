@@ -1,5 +1,8 @@
-mixin item(url, screenName, noviSub, type = 'mp4')
-  li.full: p: a(href='./film.html?name=' + url + '&screenName=' + screenName + '&type=' + type + '&noviSub=' + noviSub)!=screenName
+mixin item(url, screenName, noviSub, type)
+  - url = './film.html?name=' + url + '&screenName=' + screenName
+  - if (type) url += '&type=' + type
+  - if (noviSub) url += '&noviSub=' + noviSub
+  li.full: p: a(href=url)!=screenName
 
 mixin listHeading(name)
   .list-heading: h3.list-title!=name
