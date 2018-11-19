@@ -1,8 +1,17 @@
-mixin item(url, screenName, noviSub, type)
-  - url = './film.html?name=' + url + '&screenName=' + screenName
-  - if (type) url += '&type=' + type
-  - if (noviSub) url += '&noviSub=' + noviSub
-  li.full: p: a(href=url)!=screenName
+mixin groupTitle(name)
+  h2.group-title.active!=name
 
 mixin listHeading(name)
   .list-heading: h3.list-title!=name
+
+mixin item(url, screenName, img, noviSub, type)
+  - url = './film.html?name=' + url + '&screenName=' + screenName
+  - if (type) url += '&type=' + type
+  - if (noviSub) url += '&noviSub=' + noviSub
+  li
+    a(href=url)
+      .thumbnail
+        .movie-img: img(src=img)
+        .caption
+          h46!=screenName
+  // li.full: p: a(href=url)!=screenName

@@ -12,20 +12,21 @@ html
   body.home-index
     h1.main-title Film List
     .group-block
-      h2.group-title One-shot
+      +groupTitle('One-shot')
       .content
         ul.list
-          +item('Doctor-Strange/Doctor-Strange', 'Doctor Strange')
-          +item('One-shot/Before-I-fall', 'Before I fall')
-          +item('One-shot/The-Fifth-Estate', 'The Fifth Estate')
-          +item('One-shot/The-Imitation-Game', 'The Imitation Game')
-          +item('One-shot/Arthur-Christmas', 'Arthur Christmas')
-          +item('One-shot/Joy (2015)', 'Joy (2015)')
-          +item('One-shot/Jackie (2016)', 'Jackie (2016)')
-          +item('One-shot/Steve Jobs The Man in the Machine (2015)', 'Steve Jobs The Man in the Machine (2015)')
-          +item('One-shot/The Invisible Woman (2013)', 'The Invisible Woman (2013)')
-      h2.group-title Sherlock Holmes
+          +item('Doctor-Strange/Doctor-Strange', 'Doctor Strange', 'https://www.studyphim.vn/system/movies/2191/thumbnails/medium/GOTT.png')
+          +item('One-shot/Before-I-fall', 'Before I fall', 'https://www.studyphim.vn/system/movies/2310/thumbnails/medium/GOTT.png')
+          +item('One-shot/The-Fifth-Estate', 'The Fifth Estate', 'https://www.studyphim.vn/system/movies/987/thumbnails/medium/1.jpg')
+          +item('One-shot/The-Imitation-Game', 'The Imitation Game', 'https://www.studyphim.vn/system/movies/713/thumbnails/medium/1.jpg')
+          +item('One-shot/Arthur-Christmas', 'Arthur Christmas', 'https://www.studyphim.vn/system/movies/351/thumbnails/medium/zktwFpijrCms7sskAqhwZdS822d.jpg')
+          +item('One-shot/Joy (2015)', 'Joy (2015)', 'https://www.studyphim.vn/system/movies/1927/thumbnails/medium/dGcyU5Uhk49rVtpuHKVIwtMAOiP.jpg')
+          +item('One-shot/Jackie (2016)', 'Jackie (2016)', 'https://www.studyphim.vn/system/movies/2242/thumbnails/medium/GOTT.png')
+          +item('One-shot/Steve Jobs The Man in the Machine (2015)', 'Steve Jobs The Man in the Machine (2015)', 'https://www.studyphim.vn/system/movies/1604/thumbnails/medium/1.jpg')
+          +item('One-shot/The Invisible Woman (2013)', 'The Invisible Woman (2013)', 'https://www.studyphim.vn/system/movies/2419/thumbnails/medium/GOTT.png')
+      +groupTitle('Sherlock Holmes')
       .content
+        .group-cover: img(src="covers/Sherlock3_icon_1920x1080.jpg")
         +listHeading('Season 01')
         ul.list
           +item('Sherlock-Holmes/Season-01/Sherlock.1x01', '01 - A Study in Pink')
@@ -46,8 +47,9 @@ html
           //- S04 - 2. The Lying Detective
           //- S04 - 3. The Final Problem
 
-      h2.group-title Harry Potter
+      +groupTitle('Harry Potter')
       .content
+        .group-cover: img(src="covers/harry-potter.jpeg")
         ul.list
           +item('One-shot/E01 - Harry Potter and the Sorcerers Stone (2001)', 'E01 - Harry Potter and the Sorcerers Stone (2001)')
           +item('One-shot/E02 - Harry Potter and the Chamber of Secrets (2002)', 'E02 - Harry Potter and the Chamber of Secrets (2002)')
@@ -57,16 +59,19 @@ html
           +item('One-shot/E06 - Harry Potter and the Half Blood Prince (2009)', 'E06 - Harry Potter and the Half Blood Prince (2009)')
           +item('One-shot/E07 - Harry Potter and the Deathly Hallows Part 1 (2010)', 'E07 - Harry Potter and the Deathly Hallows Part 1 (2010)')
           +item('One-shot/E08 - Harry Potter and the Deathly Hallows Part 2 (2011)', 'E08 - Harry Potter and the Deathly Hallows Part 2 (2011)')
-      h2.group-title Continuum
+      +groupTitle('Continuum')
       .content
+        .group-cover: img(src="https://www.studyphim.vn/system/movies/1338/thumbnails/medium/Continuum-Season-4.jpg")
         +listHeading('Season 04')
         ul.list
           - Continuum = 0;
           while (Continuum < 6)
             - Continuum++
             +item('Continuum/Season-04/Continuum.S04E0' + Continuum, 'Continuum Season 4 - 0' + Continuum)
-      h2.group-title Timeless
+
+      +groupTitle('Timeless')
       .content
+        .group-cover: img(src="https://www.studyphim.vn/system/movies/2547/thumbnails/medium/thumtime.png")
         +listHeading('Season 01')
         ul.list
           - timeless = 0;
@@ -74,10 +79,10 @@ html
             - timeless++
             +item('Timeless/Season-01/' + (timeless < 10 ? '0' : '') + timeless, 'Timeless Season 01 - ' + (timeless < 10 ? '0' : '') + timeless)
 
-      h2.group-title Mission Impossible
+      +groupTitle('Mission Impossible')
       .content
         ul.list
-          +item('One-shot/Fallout (2018)', 'Fallout (2018)')
+          +item('One-shot/Fallout (2018)', 'Fallout (2018)', "https://www.studyphim.vn/system/movies/3337/thumbnails/medium/thumbnail.jpg")
     script(type='text/javascript', src='./master-assets/popper.min.js')
     script(type='text/javascript', src='./master-assets/bootstrap.min.js')
     script(defer='', src='./master-assets/script.js')
