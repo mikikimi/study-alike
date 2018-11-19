@@ -2496,3 +2496,7 @@ label.answer {
 .mediaplayer[data-state="waiting"] > div.jme-media-overlay {
     display: none !important;
 }
+
+.no-vi-sub .show-sub span small {
+	display: none;
+}

@@ -19,6 +19,11 @@ html
           +item('One-shot/Before-I-fall', 'Before I fall')
           +item('One-shot/The-Fifth-Estate', 'The Fifth Estate')
           +item('One-shot/The-Imitation-Game', 'The Imitation Game')
+          +item('One-shot/Arthur-Christmas', 'Arthur Christmas', true)
+          +item('One-shot/Joy (2015)', 'Joy (2015)')
+          +item('One-shot/Jackie (2016)', 'Jackie (2016)')
+          +item('One-shot/Steve Jobs The Man in the Machine (2015)', 'Steve Jobs The Man in the Machine (2015)')
+          +item('One-shot/The Invisible Woman (2013)', 'The Invisible Woman (2013)')
       h2.group-title Sherlock Holmes
       .content
         +listHeading('Season 01')
@@ -54,11 +59,21 @@ html
           +item('One-shot/E08 - Harry Potter and the Deathly Hallows Part 2 (2011)', 'E08 - Harry Potter and the Deathly Hallows Part 2 (2011)')
       h2.group-title Continuum
       .content
+        +listHeading('Season 04')
+        ul.list
+          - Continuum = 0;
+          while (Continuum < 6)
+            - Continuum++
+            +item('Continuum/Season-04/Continuum.S04E0' + Continuum, 'Continuum Season 4 - 0' + Continuum)
+      h2.group-title Timeless
+      .content
         +listHeading('Season 01')
         ul.list
-          +item('Sherlock-Holmes/Season-01/Sherlock.1x01', '01')
-          +item('Sherlock-Holmes/Season-01/Sherlock.1x02.The.Blind.Banker', '02')
-          +item('Sherlock-Holmes/Season-01/Sherlock.1x03.The.Great.Game', '03')
+          - timeless = 0;
+          while (timeless < 16)
+            - timeless++
+            +item('Timeless/Season-01/' + (timeless < 10 ? '0' : '') + timeless, 'Timeless Season 01 - ' + (timeless < 10 ? '0' : '') + timeless)
+
       h2.group-title Mission Impossible
       .content
         ul.list
