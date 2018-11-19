@@ -78,7 +78,6 @@
       return vars;
       }
       $(function() {
-      //?name=sherlock-season-1/Sherlock.1x02.The.Blind.Banker.HDTV.XviD-FoV
       var queries = getUrlVars();
       var folderName = 'movies/';
       var noViSub = folderName + queries['noViSub'];
@@ -92,6 +91,7 @@
         $('body').addClass('no-vi-sub');
       }
       document.title = movieName;
+      $('#mainTitle').text(movieName);
       });
     </script>
     <div class="container-fluid">
@@ -119,6 +119,9 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="col-md-4">
+            <h3 class="text-danger" id="mainTitle"></h3>
           </div>
         </div>
       </div>

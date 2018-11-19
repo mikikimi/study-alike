@@ -84,7 +84,6 @@ html.no-js
       return vars;
       }
       $(function() {
-      //?name=sherlock-season-1/Sherlock.1x02.The.Blind.Banker.HDTV.XviD-FoV
       var queries = getUrlVars();
       var folderName = 'movies/';
       var noViSub = folderName + queries['noViSub'];
@@ -98,6 +97,7 @@ html.no-js
         $('body').addClass('no-vi-sub');
       }
       document.title = movieName;
+      $('#mainTitle').text(movieName);
       });
     .container-fluid
       .row
@@ -124,6 +124,8 @@ html.no-js
                     span.input-group-btn
                       button.btn.btn-default.speed-increase(type='button')
                         i.fa.fa-plus(style='color:green')
+          .col-md-4
+            h3#mainTitle.text-danger
       script(src='assets/js/bootstrap.min.js')
       script(src='assets/js/jquery.number.min.js')
       script(src='assets/js/alertify.min.js')
