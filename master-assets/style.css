@@ -4,6 +4,7 @@ body {
   padding: 0 30px;
   margin: 0 auto 50px;
   font-size: 18px;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .main-title {
@@ -88,6 +89,10 @@ body {
   overflow: hidden;
   margin: 0 10px 20px;
   text-align: center;
+}
+
+.list.align-left li {
+  text-align: left;
 }
 
 .list li.full {

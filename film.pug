@@ -91,10 +91,13 @@ html.no-js
       var movieName = window.decodeURIComponent(queries['screenName']);
       var movieType = queries['type'] ? window.decodeURIComponent(queries['type']) : 'mp4';
       $('#video').attr('src', movieFile + '.' + movieType);
-      $('#en').attr('value', '/studyphim-alike/' + movieFile + '.srt');
-      $('#vi').attr('value', '/studyphim-alike/' + movieFile + '-vi.srt');
-      if (noViSub == true) {
+      $('#en').attr('value', '/studyphim-alike/' + movieFile + '.srt');      
+      console.log('noViSub', noViSub);
+      if (noViSub) {
         $('body').addClass('no-vi-sub');
+        $('#vi').attr('value', '/studyphim-alike/' + movieFile + '.srt');
+      } else {
+        $('#vi').attr('value', '/studyphim-alike/' + movieFile + '-vi.srt');
       }
       document.title = movieName;
       $('#mainTitle').text(movieName);

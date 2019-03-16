@@ -1,17 +1,21 @@
-mixin groupTitle(name)
-  h2.group-title.active!=name
+mixin groupTitle(name, active)
+  h2.group-title(class=active ? 'active' : '')!=counter + '. ' + name
+  -counter++;
 
 mixin listHeading(name)
   .list-heading: h3.list-title!=name
 
-mixin item(url, screenName, img, noviSub, type)
+mixin contentList(list, noImg, noViSub)
+  each item, index in list
+    +item(item[0], (index+1) + '. ' + item[1], noImg ? noImg : item[2], noViSub ? noViSub : item[3], item[4])
+
+mixin item(url, screenName, img, noViSub, type)
   - url = './film.html?name=' + url + '&screenName=' + screenName
   - if (type) url += '&type=' + type
-  - if (noviSub) url += '&noviSub=' + noviSub
+  - if (noViSub) url += '&noViSub=' + noViSub
   li
     a(href=url)
       .thumbnail
         .movie-img: img(src=img)
-        .caption
-          h46!=screenName
+        .caption!=screenName
   // li.full: p: a(href=url)!=screenName

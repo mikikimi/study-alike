@@ -1,4 +1,6 @@
-include mixins/mixins.pug
+include mixins/mixins
+
+- counter = 1;
 
 html
   head
@@ -12,72 +14,17 @@ html
   body.home-index
     h1.main-title Film List
     .group-block
+      +groupTitle('Spoken English - Oxford Online English')
+      include blocks/oxford-online-english
+
+      //- +groupTitle('GiGi Stories')
+      //- include blocks/gigi-story
+
       +groupTitle('One-shot')
-      .content
-        ul.list
-          +item('Doctor-Strange/Doctor-Strange', 'Doctor Strange', 'https://www.studyphim.vn/system/movies/2191/thumbnails/medium/GOTT.png')
-          +item('One-shot/Before-I-fall', 'Before I fall', 'https://www.studyphim.vn/system/movies/2310/thumbnails/medium/GOTT.png')
-          +item('One-shot/The-Fifth-Estate', 'The Fifth Estate', 'https://www.studyphim.vn/system/movies/987/thumbnails/medium/1.jpg')
-          +item('One-shot/The-Imitation-Game', 'The Imitation Game', 'https://www.studyphim.vn/system/movies/713/thumbnails/medium/1.jpg')
-          +item('One-shot/Arthur-Christmas', 'Arthur Christmas', 'https://www.studyphim.vn/system/movies/351/thumbnails/medium/zktwFpijrCms7sskAqhwZdS822d.jpg')
-          +item('One-shot/Joy (2015)', 'Joy (2015)', 'https://www.studyphim.vn/system/movies/1927/thumbnails/medium/dGcyU5Uhk49rVtpuHKVIwtMAOiP.jpg')
-          +item('One-shot/Jackie (2016)', 'Jackie (2016)', 'https://www.studyphim.vn/system/movies/2242/thumbnails/medium/GOTT.png')
-          +item('One-shot/Steve Jobs The Man in the Machine (2015)', 'Steve Jobs The Man in the Machine (2015)', 'https://www.studyphim.vn/system/movies/1604/thumbnails/medium/1.jpg')
-          +item('One-shot/The Invisible Woman (2013)', 'The Invisible Woman (2013)', 'https://www.studyphim.vn/system/movies/2419/thumbnails/medium/GOTT.png')
-      +groupTitle('Sherlock Holmes')
-      .content
-        .group-cover: img(src="covers/Sherlock3_icon_1920x1080.jpg")
-        +listHeading('Season 01')
-        ul.list
-          +item('Sherlock-Holmes/Season-01/Sherlock.1x01', '01 - A Study in Pink')
-          +item('Sherlock-Holmes/Season-01/Sherlock.1x02.The.Blind.Banker', '02 - The Blind Banker')
-          +item('Sherlock-Holmes/Season-01/Sherlock.1x03.The.Great.Game', '03 - The Great Game')
-        +listHeading('Season 02')
-        ul.list
-          +item('Sherlock-Holmes/Season-02/Sherlock.2x01', '01 - A Scandal in Belgravia')
-          +item('Sherlock-Holmes/Season-02/Sherlock.2x02', '02 - The Hounds of Baskerville')
-          +item('Sherlock-Holmes/Season-02/Sherlock.2x03', '03 - The Reichenbach Fall')
-        +listHeading('Season 03')
-        ul.list
-          +item('Sherlock-Holmes/Season-03/Sherlock.3x01', '01 - The Empty Hearse')
-          +item('Sherlock-Holmes/Season-03/Sherlock.3x02', '02 - The Sign of Three')
-          +item('Sherlock-Holmes/Season-03/Sherlock.3x03', '03 - His Last Vow')
-          //- 4. The Abominable Bride
-          //- S04 - 1. The Six Thatchers
-          //- S04 - 2. The Lying Detective
-          //- S04 - 3. The Final Problem
+      include blocks/one-shot
 
-      +groupTitle('Harry Potter')
-      .content
-        .group-cover: img(src="covers/harry-potter.jpeg")
-        ul.list
-          +item('One-shot/E01 - Harry Potter and the Sorcerers Stone (2001)', 'E01 - Harry Potter and the Sorcerers Stone (2001)')
-          +item('One-shot/E02 - Harry Potter and the Chamber of Secrets (2002)', 'E02 - Harry Potter and the Chamber of Secrets (2002)')
-          +item('One-shot/E03 - Harry Potter and the Prisoner of Azkaban (2004)', 'E03 - Harry Potter and the Prisoner of Azkaban (2004)')
-          +item('One-shot/E04 - Harry Potter and the Goblet of Fire (2005)', 'E04 - Harry Potter and the Goblet of Fire (2005)')
-          +item('One-shot/E05 - Harry Potter and the Order of the Phoenix (2007)', 'E05 - Harry Potter and the Order of the Phoenix (2007)')
-          +item('One-shot/E06 - Harry Potter and the Half Blood Prince (2009)', 'E06 - Harry Potter and the Half Blood Prince (2009)')
-          +item('One-shot/E07 - Harry Potter and the Deathly Hallows Part 1 (2010)', 'E07 - Harry Potter and the Deathly Hallows Part 1 (2010)')
-          +item('One-shot/E08 - Harry Potter and the Deathly Hallows Part 2 (2011)', 'E08 - Harry Potter and the Deathly Hallows Part 2 (2011)')
-      +groupTitle('Continuum')
-      .content
-        .group-cover: img(src="https://www.studyphim.vn/system/movies/1338/thumbnails/medium/Continuum-Season-4.jpg")
-        +listHeading('Season 04')
-        ul.list
-          - Continuum = 0;
-          while (Continuum < 6)
-            - Continuum++
-            +item('Continuum/Season-04/Continuum.S04E0' + Continuum, 'Continuum Season 4 - 0' + Continuum)
+      include blocks/another-list
 
-      +groupTitle('Timeless')
-      .content
-        .group-cover: img(src="https://www.studyphim.vn/system/movies/2547/thumbnails/medium/thumtime.png")
-        +listHeading('Season 01')
-        ul.list
-          - timeless = 0;
-          while (timeless < 16)
-            - timeless++
-            +item('Timeless/Season-01/' + (timeless < 10 ? '0' : '') + timeless, 'Timeless Season 01 - ' + (timeless < 10 ? '0' : '') + timeless)
 
       +groupTitle('Mission Impossible')
       .content
