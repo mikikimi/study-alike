@@ -1,0 +1,11 @@
+include ../mixins/mixins
+
+-
+    contentList = [[
+        'GIGI-story/The Gingerbread Man - Children Story', 'The Gingerbread Man'
+    ]];
+
+.content
+  .group-cover: img(src="covers/gigi-stories.png")
+  ul.list
+    +contentList(contentList)
