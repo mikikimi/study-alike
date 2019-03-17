@@ -5,14 +5,18 @@ mixin groupTitle(name, active)
 mixin listHeading(name)
   .list-heading: h3.list-title!=name
 
-mixin contentList(list, noImg, noViSub)
+mixin contentList(list, noImg, noViSub, noCounter, noEnSub)
   each item, index in list
-    +item(item[0], (index+1) + '. ' + item[1], noImg ? noImg : item[2], noViSub ? noViSub : item[3], item[4])
+    if (noCounter)
+      +item(item[0], item[1], noImg ? noImg : item[2], noViSub ? noViSub : item[3], item[4], noEnSub)
+    else
+      +item(item[0], (index+1) + '. ' + item[1], noImg ? noImg : item[2], noViSub ? noViSub : item[3], item[4], noEnSub)
 
-mixin item(url, screenName, img, noViSub, type)
+mixin item(url, screenName, img, noViSub, type, noEnSub)
   - url = './film.html?name=' + url + '&screenName=' + screenName
   - if (type) url += '&type=' + type
   - if (noViSub) url += '&noViSub=' + noViSub
+  - if (noEnSub) url += '&noEnSub=' + noEnSub
   li
     a(href=url)
       .thumbnail

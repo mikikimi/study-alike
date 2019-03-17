@@ -8,6 +8,14 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+.no-sub .main-player-wrapper .col-md-3 {
+	display: none;
+}
+.no-sub .main-player-wrapper .col-md-9 {
+	width: 80%;
+	float: none;
+	margin: 0 auto;
+}
 .img-responsive {
 	width: 100%;
 }
