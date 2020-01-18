@@ -2,6 +2,7 @@
 <html class="no-js">
   <head>
     <title>Film</title>
+    <meta charset="utf-8">
     <link rel="icon" type="image/png" href="./favicon.ico" sizes="16x16">
     <!-- Bootstrap-->
     <link media="all" type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -40,7 +41,7 @@
         <div class="row main-player-wrapper">
           <div class="col-md-9">
             <div class="mediaplayer">
-              <video id="video" controls="controls" preload="none" width="100%" height="100%">
+              <video id="video" controls="controls" preload="none" width="100%" height="100%" loop>
                 <source src="">
                 <input id="vi" value="">
                 <input id="en" value="">
@@ -80,8 +81,8 @@
       $(function() {
       var queries = getUrlVars();
       var folderName = 'movies/';
-      var noViSub = folderName + queries['noViSub'];
-      var noEnSub = folderName + queries['noEnSub'];
+      var noViSub = queries['noViSub'];
+      var noEnSub = queries['noEnSub'];
       var movieFile = folderName + queries['name'];
       var movieName = window.decodeURIComponent(queries['screenName']);
       var movieType = queries['type'] ? window.decodeURIComponent(queries['type']) : 'mp4';
